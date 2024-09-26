@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TesteCarePlus.CarePlus" parent="Theme.MaterialComponents.DayNight.DarkActionBar" >
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/seGreen</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/mintCream</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/blue</item>
+        <item name="colorOnSecondaryFixed">@color/denim</item>
+        <item name="colorSecondaryContainer">@color/persianRed</item>
+
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+    </style>
+
+</resources>
