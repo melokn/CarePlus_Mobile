@@ -16,20 +16,37 @@ public class TelaCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_tela_cadastro);
 
 
-        //Funcionalidade dos botões
-        EditText email = findViewById(R.id.campoEmailCadastro);
-        EditText usuario = findViewById(R.id.campoUsuario);
-        EditText senha = findViewById(R.id.campoSenhaCadastro);
-        Button cadastrar = findViewById(R.id.btCadastrarCadastro);
+        EditText campoEmail = findViewById(R.id.campoEmailCadastro);
+        EditText campoUsuario = findViewById(R.id.campoSenhaCadastro);
+        EditText campoSenha = findViewById(R.id.campoSenha);
+        Button btCadastro = findViewById(R.id.btCadastrarCadastro);
 
-        cadastrar.setOnClickListener(new View.OnClickListener() {
+        btCadastro.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
             public void onClick(View v) {
 
-                Intent intent = new Intent(TelaCadastro.this, HomeFragment.class);
+                String email = campoEmail.getText().toString().trim();
+                String senha = campoSenha.getText().toString().trim();
+                String usuario = campoUsuario.getText().toString().trim();
 
+
+                if (email.isEmpty() || senha.isEmpty() || usuario.isEmpty()) {
+
+                    Toast.makeText(TelaCadastro.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("email", email);
+                editor.putString("senha", senha);
+                editor.putString("usuario", usuario);
+                editor.apply();
+
+
+                Intent intent = new Intent(TelaCadastro.this, TelaEscolha.class);
                 startActivity(intent);
 
             }
