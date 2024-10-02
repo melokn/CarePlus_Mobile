@@ -2,7 +2,22 @@ package com.example.testecareplus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class TelaEscolha extends AppCompatActivity {
     public void createUser(String funcaoUsuario){
@@ -41,7 +56,7 @@ public class TelaEscolha extends AppCompatActivity {
 
                                 // Exibir uma mensagem de sucesso e iniciar a próxima atividade
                                 Toast.makeText(TelaEscolha.this, "Cadastrado", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(TelaEscolha.this, TelaPrincipal.class);
+                                Intent intent = new Intent(TelaEscolha.this, HomeFragment.class);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(TelaEscolha.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
@@ -68,7 +83,7 @@ public class TelaEscolha extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_escolha);
-        ImageButton familia = findViewById(R.id.ibFamila);  // Corrija o ID para corresponder ao XML
+        ImageButton familia = findViewById(R.id.ibFamilia);  // Corrija o ID para corresponder ao XML
         ImageButton cuidador = findViewById(R.id.ibCuidador);  // Corrija o ID para corresponder ao XML
 
         // Configurar o Listener do botão Familia

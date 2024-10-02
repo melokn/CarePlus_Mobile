@@ -23,22 +23,19 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class HomeFragment extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private ImageAdapter adapter;
-    private List<String> imageUrls;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         // Configurando o LayoutManager para ser horizontal
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         // Supondo que você já tenha um método que obtém as URLs do banco de dados
-        imageUrls = fetchImageUrlsFromDatabase(); // Substitua pelo seu método
-        adapter = new ImageAdapter(this, imageUrls);
+        List<String> imageUrls = fetchImageUrlsFromDatabase(); // Substitua pelo seu método
+        ImageAdapter adapter = new ImageAdapter(this, imageUrls);
         recyclerView.setAdapter(adapter);
 
         ImageButton Morepacientes = findViewById(R.id.btMorePacientes);

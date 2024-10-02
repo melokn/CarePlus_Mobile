@@ -1,6 +1,7 @@
 package com.example.testecareplus;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +12,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.example.careplus.R;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,7 +55,7 @@ public class LoginFragment extends AppCompatActivity {
 
                 if (email.isEmpty() || senha.isEmpty()) {
                     // Exibir uma mensagem de erro se algum campo estiver vazio
-                    Toast.makeText(MainActivity.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginFragment.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -74,15 +85,15 @@ public class LoginFragment extends AppCompatActivity {
                                         editor.apply();
 
                                         // Exibir uma mensagem de sucesso e iniciar a próxima atividade
-                                        Toast.makeText(MainActivity.this, "Cadastrado", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
+                                        Toast.makeText(LoginFragment.this, "Cadastrado", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(LoginFragment.this, HomeFragment.class);
                                         startActivity(intent);
                                     } else {
-                                        Toast.makeText(MainActivity.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginFragment.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
-                                    Toast.makeText(MainActivity.this, "Erro ao processar a resposta", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginFragment.this, "Erro ao processar a resposta", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         },
@@ -90,12 +101,12 @@ public class LoginFragment extends AppCompatActivity {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 error.printStackTrace();
-                                Toast.makeText(MainActivity.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginFragment.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
                             }
                         }
                 );
 
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                RequestQueue queue = Volley.newRequestQueue(LoginFragment.this);
                 queue.add(enviarPost);
             }
         });

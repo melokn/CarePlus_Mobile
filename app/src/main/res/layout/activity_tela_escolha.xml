@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/ibFamilia"
         android:layout_width="143dp"
         android:layout_height="131dp"
         android:layout_marginStart="49dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/ibCuidador"
         android:layout_width="124dp"
         android:layout_height="117dp"
         android:layout_marginStart="232dp"

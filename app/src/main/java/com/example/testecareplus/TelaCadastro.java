@@ -3,10 +3,12 @@ package com.example.testecareplus;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TelaCadastro extends AppCompatActivity {
 
@@ -17,8 +19,8 @@ public class TelaCadastro extends AppCompatActivity {
 
 
         EditText campoEmail = findViewById(R.id.campoEmailCadastro);
-        EditText campoUsuario = findViewById(R.id.campoSenhaCadastro);
-        EditText campoSenha = findViewById(R.id.campoSenha);
+        EditText campoUsuario = findViewById(R.id.campoUsuario);
+        EditText campoSenha = findViewById(R.id.campoSenhaCadastro);
         Button btCadastro = findViewById(R.id.btCadastrarCadastro);
 
         btCadastro.setOnClickListener(new View.OnClickListener() {
