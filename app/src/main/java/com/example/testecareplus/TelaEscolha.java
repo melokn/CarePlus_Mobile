@@ -46,7 +46,7 @@ public class TelaEscolha extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     public void onResponse(JSONObject response) {
                         try {
-                            // Supondo que o ID do usuário está em um campo chamado "userId"
+
                             if (response.has("userId")) {
                                 String userId = response.getString("userId");
                                 SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -54,7 +54,7 @@ public class TelaEscolha extends AppCompatActivity {
                                 editor.putString("userId", userId);
                                 editor.apply();
 
-                                // Exibir uma mensagem de sucesso e iniciar a próxima atividade
+
                                 Toast.makeText(TelaEscolha.this, "Cadastrado", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(TelaEscolha.this, HomeFragment.class);
                                 startActivity(intent);
@@ -83,14 +83,13 @@ public class TelaEscolha extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_escolha);
-        ImageButton familia = findViewById(R.id.ibFamilia);  // Corrija o ID para corresponder ao XML
-        ImageButton cuidador = findViewById(R.id.ibCuidador);  // Corrija o ID para corresponder ao XML
+        ImageButton familia = findViewById(R.id.ibFamilia);
+        ImageButton cuidador = findViewById(R.id.ibCuidador);
 
-        // Configurar o Listener do botão Familia
         familia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Criar uma Intent para iniciar a TelaCadastro
+
                 String funcaoUsuario = "Familiar";
                 createUser(funcaoUsuario);
             }

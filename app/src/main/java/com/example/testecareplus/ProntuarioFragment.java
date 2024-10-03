@@ -52,7 +52,7 @@ import java.io.File;
 
 public class ProntuarioFragment extends AppCompatActivity {
 
-    public void createPatient(String name, String age, String height, String bloodType, String allergies, String observations, String iconUrl) throws JSONException {
+    public void createPatient(String name, int age, int height, String bloodType, String allergies, String observations, String iconUrl) throws JSONException {
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userId = prefs.getString("userId", null);
 
@@ -77,10 +77,7 @@ public class ProntuarioFragment extends AppCompatActivity {
                 dadosBody,
                 new Response.Listener<JSONObject>() {
                     public void onResponse(JSONObject response) {
-                        // Supondo que o ID do usuário está em um campo chamado "userId"
                         if (response.has("patientId")) {
-
-                            // Exibir uma mensagem de sucesso e iniciar a próxima atividade
                              Toast.makeText(ProntuarioFragment.this, "Paciente criado com sucesso!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ProntuarioFragment.this, HomeFragment.class);
                             startActivity(intent);
@@ -131,6 +128,8 @@ public class ProntuarioFragment extends AppCompatActivity {
                     }
                 }
         );
+        RequestQueue queue = Volley.newRequestQueue(ProntuarioFragment.this);
+        queue.add(enviarDelete);
     }
     private ActivityResultLauncher<Intent> activityResultLauncher;
     @Override
@@ -176,8 +175,8 @@ public class ProntuarioFragment extends AppCompatActivity {
                 EditText campoObservacoes = findViewById(R.id.obsText);
 
                 String nome = campoName.getText().toString().trim();
-                String idade = campoIdade.getText().toString().trim();
-                String altura = campoAltura.getText().toString().trim();
+                int idade = Integer.parseInt(campoIdade.getText().toString().trim());
+                int altura = Integer.parseInt(campoAltura.getText().toString().trim());
                 String tipoSanguineo = campoTipoSanguineo.getText().toString().trim();
                 String alergias = campoAlergias.getText().toString().trim();
                 String observacoes = campoObservacoes.getText().toString().trim();

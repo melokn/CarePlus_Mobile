@@ -69,11 +69,12 @@
         android:layout_marginBottom="231dp"
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/escCuidador"
+        android:src="@drawable/esccuidador"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/esccuidador" />
 
     <ImageButton
         android:id="@+id/ibCuidador"
@@ -85,7 +86,7 @@
         android:layout_marginBottom="233dp"
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/escFamiliar"
+        android:src="@drawable/escfamiliar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

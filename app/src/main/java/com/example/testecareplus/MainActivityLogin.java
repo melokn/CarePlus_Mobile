@@ -5,11 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,8 +22,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-public class LoginFragment extends AppCompatActivity {
+public class MainActivityLogin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +47,7 @@ public class LoginFragment extends AppCompatActivity {
 
                 if (email.isEmpty() || senha.isEmpty()) {
                     // Exibir uma mensagem de erro se algum campo estiver vazio
-                    Toast.makeText(LoginFragment.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivityLogin.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -78,15 +74,15 @@ public class LoginFragment extends AppCompatActivity {
                                         editor.putString("userId", userId);
                                         editor.apply();
 
-                                        Toast.makeText(LoginFragment.this, "Cadastrado", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LoginFragment.this, HomeFragment.class);
+                                        Toast.makeText(MainActivityLogin.this, "Cadastrado", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(MainActivityLogin.this, HomeFragment.class);
                                         startActivity(intent);
                                     } else {
-                                        Toast.makeText(LoginFragment.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivityLogin.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
-                                    Toast.makeText(LoginFragment.this, "Erro ao processar a resposta", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivityLogin.this, "Erro ao processar a resposta", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         },
@@ -94,12 +90,12 @@ public class LoginFragment extends AppCompatActivity {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 error.printStackTrace();
-                                Toast.makeText(LoginFragment.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivityLogin.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
                             }
                         }
                 );
 
-                RequestQueue queue = Volley.newRequestQueue(LoginFragment.this);
+                RequestQueue queue = Volley.newRequestQueue(MainActivityLogin.this);
                 queue.add(enviarPost);
             }
         });
@@ -107,7 +103,7 @@ public class LoginFragment extends AppCompatActivity {
         btCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginFragment.this, TelaCadastro.class);
+                Intent intent = new Intent(MainActivityLogin.this, TelaCadastro.class);
                 startActivity(intent);
             }
         });

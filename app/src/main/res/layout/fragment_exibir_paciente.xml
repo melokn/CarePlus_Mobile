@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fffef4"
-    tools:context=".ProntuarioFragment">
+    tools:context=".fragment_exibir_paciente">
 
     <!-- TODO: Update blank fragment layout -->
 
