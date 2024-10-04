@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mintCream">#EBF1EE</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="denim">#155EC7</color>
+    <color name="blue">#2288AC</color>
+    <color name="indigoDye">#134564</color>
+    <color name="seGreen">#488A67</color>
+    <color name="persianRed">#C13E32</color>
+    <color name="black">#000</color>
+
+</resources>

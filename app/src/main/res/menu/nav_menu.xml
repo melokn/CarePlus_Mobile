@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_princ"
+        android:title="Inicio"
+        
+        />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/nav_settings"
+            android:title="Configurações" />
+
+
+        <item
+          android:id="@+id/nav_pront"
+            android:icon="@drawable/nav_pront"
+            android:title="Prontuarios" />
+
+        <item
+            android:id="@+id/nav_artigos"
+            android:icon="@drawable/nav_artigos"
+            android:title="Artigos e Dicas" />
+
+        <item
+            android:id="@+id/nav_ajuda"
+            android:icon="@drawable/nav_ajuda"
+            android:title="Ajuda" />
+
+        <item
+            android:id="@+id/nav_agenda"
+            android:icon="@drawable/nav_agenda"
+            android:title="Agenda" />
+
+        <item
+            android:id="@+id/nav_agenda"
+            android:icon="@drawable/nav_pessoal"
+            android:title="Sua área" />
+
+
+    </group>
+
+    <item
+        android:title="">
+
+        <menu>
+
+            <item
+            android:id="@+id/nav_logoout"
+            android:icon="@drawable/nav_logoout"
+            android:title="Sair" />
+
+        </menu>
+
+
+    </item>
+
+</menu>
