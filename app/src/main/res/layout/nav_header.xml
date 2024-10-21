@@ -18,7 +18,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/nav_header"
+<<<<<<< HEAD
         tools:layout_editor_absoluteX="-154dp" />
+=======
+        tools:layout_editor_absoluteX="-174dp" />
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
 
     <ImageView
         android:layout_width="154dp"
@@ -31,6 +35,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+<<<<<<< HEAD
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,5 +51,7 @@
         android:textSize="14sp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="26dp" />
+=======
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
 
 </androidx.constraintlayout.widget.ConstraintLayout>

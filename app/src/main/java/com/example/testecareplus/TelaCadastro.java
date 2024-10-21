@@ -18,6 +18,7 @@ public class TelaCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_tela_cadastro);
 
 
+<<<<<<< HEAD
         EditText campoEmail = findViewById(R.id.campoEmailCadastro);
         EditText campoUsuario = findViewById(R.id.campoUsuario);
         EditText campoSenha = findViewById(R.id.campoSenhaCadastro);
@@ -28,6 +29,19 @@ public class TelaCadastro extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
+=======
+        //Funcionalidade dos botões
+        EditText campoEmail = findViewById(R.id.campoEmailCadastro);
+        EditText campoUsuario = findViewById(R.id.campoUsuario);
+        EditText campoSenha = findViewById(R.id.campoSenhaCadastro);
+        Button btCadastrar = findViewById(R.id.btCadastrarCadastro);
+
+        btCadastrar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View view) {
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
 
                 String email = campoEmail.getText().toString().trim();
                 String senha = campoSenha.getText().toString().trim();

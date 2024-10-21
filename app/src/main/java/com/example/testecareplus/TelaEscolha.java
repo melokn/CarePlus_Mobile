@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+<<<<<<< HEAD
+=======
+import android.widget.Button;
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -20,6 +24,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class TelaEscolha extends AppCompatActivity {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
     public void createUser(String funcaoUsuario){
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String email = prefs.getString("email", null);
@@ -83,6 +91,7 @@ public class TelaEscolha extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_escolha);
+<<<<<<< HEAD
         ImageButton familia = findViewById(R.id.ibFamilia);
         ImageButton cuidador = findViewById(R.id.ibCuidador);
 
@@ -98,6 +107,25 @@ public class TelaEscolha extends AppCompatActivity {
         cuidador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+=======
+
+
+        ImageButton btfamilia = findViewById(R.id.btfamilia);
+        ImageButton btcuidador = findViewById(R.id.btcuidador);
+
+        btfamilia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String funcaoUsuario = "Familiar";
+                createUser(funcaoUsuario);;
+            }
+        });
+
+
+        btcuidador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
                 String funcaoUsuario = "Cuidador";
                 createUser(funcaoUsuario);
             }

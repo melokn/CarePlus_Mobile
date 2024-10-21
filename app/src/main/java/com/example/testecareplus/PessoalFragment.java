@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+<<<<<<< HEAD
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link PessoalFragment#newInstance} factory method to
@@ -54,6 +55,11 @@ public class PessoalFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+=======
+
+public class PessoalFragment extends Fragment {
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

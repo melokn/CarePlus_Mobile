@@ -13,6 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+<<<<<<< HEAD
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
@@ -35,3 +36,5 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+=======
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c

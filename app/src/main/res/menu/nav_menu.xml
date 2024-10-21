@@ -5,6 +5,7 @@
 
     <group
         android:checkableBehavior="single">
+<<<<<<< HEAD
         <item
 
         android:icon="@drawable/nav_home"
@@ -12,34 +13,70 @@
 
         <item
 
+=======
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_princ"
+        android:title="Inicio"
+        
+        />
+
+        <item
+            android:id="@+id/nav_settings"
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:icon="@drawable/nav_settings"
             android:title="Configurações" />
 
 
         <item
+<<<<<<< HEAD
 
+=======
+          android:id="@+id/nav_pront"
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:icon="@drawable/nav_pront"
             android:title="Prontuarios" />
 
         <item
+<<<<<<< HEAD
 
+=======
+            android:id="@+id/nav_artigos"
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:icon="@drawable/nav_artigos"
             android:title="Artigos e Dicas" />
 
         <item
+<<<<<<< HEAD
 
+=======
+            android:id="@+id/nav_ajuda"
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:icon="@drawable/nav_ajuda"
             android:title="Ajuda" />
 
         <item
+<<<<<<< HEAD
 
+=======
+            android:id="@+id/nav_agenda"
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:icon="@drawable/nav_agenda"
             android:title="Agenda" />
 
         <item
+<<<<<<< HEAD
 
             android:icon="@drawable/nav_pessoal"
             android:title="Sua área" />
+=======
+            android:id="@+id/nav_agenda"
+            android:icon="@drawable/nav_pessoal"
+            android:title="Sua área" />
+
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
     </group>
 
     <item
@@ -48,7 +85,11 @@
         <menu>
 
             <item
+<<<<<<< HEAD
 
+=======
+            android:id="@+id/nav_logoout"
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:icon="@drawable/nav_logoout"
             android:title="Sair" />
 

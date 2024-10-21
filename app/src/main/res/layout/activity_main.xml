@@ -10,12 +10,22 @@
     tools:openDrawer="start"
     tools:context=".MainActivity">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+<<<<<<< HEAD
         <Toolbar
+=======
+
+
+        <androidx.appcompat.widget.Toolbar
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:id="@+id/toolbar"
@@ -25,6 +35,10 @@
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+<<<<<<< HEAD
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link AjudaFragment#newInstance} factory method to
@@ -54,11 +55,23 @@ public class AjudaFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+=======
+
+public class AjudaFragment extends Fragment {
+
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ajuda, container, false);
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 9ff707657df96969e9577072b114e45c83f3a74c
     }
 }
