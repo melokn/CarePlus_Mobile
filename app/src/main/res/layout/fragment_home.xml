@@ -19,8 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iconlogo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -144,7 +143,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btmore"
         tools:ignore="MissingConstraints" />
 
 
@@ -161,7 +159,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/btmore"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -169,10 +166,7 @@
         android:layout_width="35dp"
         android:layout_height="416dp"
         android:rotation="62"
-        app:srcCompat="@drawable/yellow"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="400dp"
-        tools:layout_editor_absoluteY="505dp" />
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -192,7 +186,6 @@
         android:id="@+id/recyclerView"
         android:layout_width="269dp"
         android:layout_height="84dp"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="392dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"

@@ -74,7 +74,6 @@ public class MainActivityLogin extends AppCompatActivity {
                                         editor.putString("userId", userId);
                                         editor.apply();
 
-                                        Toast.makeText(MainActivityLogin.this, "Cadastrado", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(MainActivityLogin.this, HomeFragment.class);
                                         startActivity(intent);
                                     } else {
