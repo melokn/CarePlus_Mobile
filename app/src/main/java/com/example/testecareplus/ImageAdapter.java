@@ -1,6 +1,9 @@
 package com.example.testecareplus;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +12,10 @@ import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
-    private List<String> imageUrls;
+    private List<String> imageBase64List;
     private List<String> patientIds;
     private Context context;
     private OnImageClickListener onImageClickListener;
@@ -25,9 +26,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     }
 
     // Construtor do Adapter
-    public ImageAdapter(Context context, List<String> imageUrls, List<String> patientIds, OnImageClickListener onImageClickListener) {
+    public ImageAdapter(Context context, List<String> imageBase64List, List<String> patientIds, OnImageClickListener onImageClickListener) {
         this.context = context;
-        this.imageUrls = imageUrls;
+        this.imageBase64List = imageBase64List;
         this.patientIds = patientIds;
         this.onImageClickListener = onImageClickListener;
     }
@@ -41,13 +42,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String imageUrl = imageUrls.get(position);  // URL da imagem do paciente
+        String imageBase64 = imageBase64List.get(position);  // Base64 da imagem do paciente
         String patientId = patientIds.get(position);  // ID do paciente
 
-        // Carregar a imagem com Glide
-        Glide.with(context)
-                .load(imageUrl)
-                .into(holder.imageButton);
+        // Decodifica a imagem e define no ImageButton
+        Bitmap bitmap = decodeBase64ToBitmap(imageBase64);
+        holder.imageButton.setImageBitmap(bitmap);
 
         // Configurar o clique
         holder.imageButton.setOnClickListener(v -> {
@@ -59,7 +59,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return imageUrls.size();
+        return imageBase64List.size();
+    }
+
+    // Método para decodificar base64 para Bitmap
+    private Bitmap decodeBase64ToBitmap(String base64) {
+        byte[] decodedBytes = Base64.decode(base64, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

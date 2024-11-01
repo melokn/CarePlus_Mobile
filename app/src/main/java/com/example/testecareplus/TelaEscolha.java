@@ -58,7 +58,7 @@ public class TelaEscolha extends AppCompatActivity {
 
 
                                 Toast.makeText(TelaEscolha.this, "Cadastrado", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(TelaEscolha.this, HomeFragment.class);
+                                Intent intent = new Intent(TelaEscolha.this, MainActivity.class);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(TelaEscolha.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();

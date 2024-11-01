@@ -1,6 +1,5 @@
 package com.example.testecareplus;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,7 +27,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private ImageAdapter imageAdapter;
-    private List<String> imageUrls = new ArrayList<>();
+    private List<String> imageBase64List = new ArrayList<>();
     private List<String> patientIds = new ArrayList<>();
 
 
@@ -41,7 +40,7 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-        imageAdapter = new ImageAdapter(getContext(), imageUrls, patientIds, new ImageAdapter.OnImageClickListener() {
+        imageAdapter = new ImageAdapter(getContext(), imageBase64List, patientIds, new ImageAdapter.OnImageClickListener() {
             @Override
             public void onImageClick(String patientId) {
                 // Salvando o ID do paciente no SharedPreferences
@@ -71,17 +70,17 @@ public class HomeFragment extends Fragment {
                     .commit();
         });
 
-        // Busca os URLs das imagens e IDs dos pacientes
-        fetchImageUrlsFromDatabase();
+        // Busca os dados dos pacientes
+        fetchPatientDataFromDatabase();
 
         return view;
     }
 
-    private void fetchImageUrlsFromDatabase() {
+    private void fetchPatientDataFromDatabase() {
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", getContext().MODE_PRIVATE);
         String userId = prefs.getString("userId", null);
 
-        String url = String.format("http://10.0.2.2:4060/users/%s/patients/", userId);
+        String url = String.format("http://10.0.2.2:4060/users/%s/patients", userId);
 
         JsonObjectRequest enviarGet = new JsonObjectRequest(
                 Request.Method.GET,
@@ -90,7 +89,7 @@ public class HomeFragment extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        List<String> newImageUrls = new ArrayList<>();
+                        List<String> newImageBase64List = new ArrayList<>();
                         List<String> newPatientIds = new ArrayList<>();
 
                         try {
@@ -100,10 +99,10 @@ public class HomeFragment extends Fragment {
                                 for (int i = 0; i < patientsArray.length(); i++) {
                                     JSONObject patientJson = patientsArray.getJSONObject(i);
                                     String patientId = patientJson.optString("id", null);  // Obtém o ID do paciente
-                                    String urlIcon = patientJson.optString("urlIcon", null);  // Obtém a URL da imagem (se houver)
+                                    String iconBase64 = patientJson.optString("icon", null);  // Obtém o base64 da imagem
 
-                                    if (urlIcon != null && !urlIcon.isEmpty()) {
-                                        newImageUrls.add(urlIcon);
+                                    if (iconBase64 != null && !iconBase64.isEmpty()) {
+                                        newImageBase64List.add(iconBase64);
                                         newPatientIds.add(patientId);
                                     }
                                 }
@@ -113,7 +112,7 @@ public class HomeFragment extends Fragment {
                             Toast.makeText(getContext(), "Erro ao processar os pacientes", Toast.LENGTH_SHORT).show();
                         }
 
-                        updateRecyclerView(newImageUrls, newPatientIds);
+                        updateRecyclerView(newImageBase64List, newPatientIds);
                     }
                 },
                 new Response.ErrorListener() {
@@ -128,9 +127,9 @@ public class HomeFragment extends Fragment {
         Volley.newRequestQueue(getContext()).add(enviarGet);
     }
 
-    private void updateRecyclerView(List<String> imageUrls, List<String> patientIds) {
-        this.imageUrls.clear();
-        this.imageUrls.addAll(imageUrls);
+    private void updateRecyclerView(List<String> imageBase64List, List<String> patientIds) {
+        this.imageBase64List.clear();
+        this.imageBase64List.addAll(imageBase64List);
 
         this.patientIds.clear();
         this.patientIds.addAll(patientIds);

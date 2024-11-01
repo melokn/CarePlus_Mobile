@@ -37,6 +37,13 @@ public class TelaLogin extends AppCompatActivity {
                 Button btCadastro = findViewById(R.id.btCadastro);
 
 
+                btCadastro.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                                Intent intent = new Intent(TelaLogin.this, TelaCadastro.class);
+                                startActivity(intent);
+                        }
+                });
                 //Botão de login pra ir pra tela inicial
                 btLogin.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -76,8 +83,8 @@ public class TelaLogin extends AppCompatActivity {
                                                                         editor.putString("userId", userId);
                                                                         editor.apply();
 
-                                                                        Toast.makeText(TelaLogin.this, "Cadastrado", Toast.LENGTH_SHORT).show();
-                                                                        Intent intent = new Intent(TelaLogin.this, HomeFragment.class);
+                                                                        Toast.makeText(TelaLogin.this, "Logado com sucesso", Toast.LENGTH_SHORT).show();
+                                                                        Intent intent = new Intent(TelaLogin.this, MainActivity.class);
                                                                         startActivity(intent);
                                                                 } else {
                                                                         Toast.makeText(TelaLogin.this, "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
