@@ -50,9 +50,9 @@ public class HomeFragment extends Fragment {
                 editor.apply();
 
                 // Navegando para outro Fragment
-                Fragment prontuarioFragment = new ProntuarioFragment();
+                Fragment pacienteFragment = new PacienteFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, prontuarioFragment)
+                        .replace(R.id.fragment_container, pacienteFragment)
                         .addToBackStack(null)
                         .commit();
             }
