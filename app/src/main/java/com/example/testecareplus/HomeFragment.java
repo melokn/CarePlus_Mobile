@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
                 // Salvando o ID do paciente no SharedPreferences
                 SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", getContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("selectedPatientId", patientId);
+                editor.putString("patientId", patientId);
                 editor.apply();
 
                 // Navegando para outro Fragment
