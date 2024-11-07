@@ -47,7 +47,7 @@ public class ProntuarioFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_prontuario, container, false);
         ImageButton btSave = view.findViewById(R.id.btSave);
-        ImageButton btTrash = view.findViewById(R.id.btTrash);
+
         uploadIcon = view.findViewById(R.id.ibUploadIcon);
 
         activityResultLauncher = registerForActivityResult(
@@ -60,11 +60,7 @@ public class ProntuarioFragment extends Fragment {
                 }
         );
 
-        btTrash.setOnClickListener(view1 -> {
-            SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-            String patientId = prefs.getString("patientId", null);
-            deletePatient(patientId);
-        });
+
 
         uploadIcon.setOnClickListener(v -> openGallery());
 
@@ -106,15 +102,47 @@ public class ProntuarioFragment extends Fragment {
         EditText campoAlergias = getView().findViewById(R.id.alergiaText);
         EditText campoObservacoes = getView().findViewById(R.id.obsText);
 
+        // Obtendo os valores dos campos de entrada
         String nome = campoName.getText().toString().trim();
-        int idade = Integer.parseInt(campoIdade.getText().toString().trim());
-        int altura = Integer.parseInt(campoAltura.getText().toString().trim());
+        String idadeString = campoIdade.getText().toString().trim();
+        String alturaString = campoAltura.getText().toString().trim();
         String tipoSanguineo = campoTipoSanguineo.getText().toString().trim();
         String alergias = campoAlergias.getText().toString().trim();
         String observacoes = campoObservacoes.getText().toString().trim();
+
+        // Verificar se os campos obrigatórios estão vazios
+        if (nome.isEmpty() || idadeString.isEmpty() || alturaString.isEmpty() || tipoSanguineo.isEmpty() || alergias.isEmpty() || observacoes.isEmpty()) {
+            Toast.makeText(getContext(), "Todos os campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
+            return; // Interrompe a execução se algum campo estiver vazio
+        }
+
+        // Verificar se a idade e a altura são números válidos
+        int idade = 0;
+        int altura = 0;
+
+        try {
+            idade = Integer.parseInt(idadeString);
+        } catch (NumberFormatException e) {
+            Toast.makeText(getContext(), "Idade deve ser um número válido!", Toast.LENGTH_SHORT).show();
+            return; // Se a idade não for válida, interrompe a execução
+        }
+
+        try {
+            altura = Integer.parseInt(alturaString);
+        } catch (NumberFormatException e) {
+            Toast.makeText(getContext(), "Altura deve ser um número válido!", Toast.LENGTH_SHORT).show();
+            return; // Se a altura não for válida, interrompe a execução
+        }
+
+        // Recupera o ID do usuário
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String userId = prefs.getString("userId", null);
+        if (userId == null) {
+            Toast.makeText(getContext(), "Usuário não encontrado!", Toast.LENGTH_SHORT).show();
+            return; // Se não encontrar o userId, interrompe a execução
+        }
 
+        // Converter imagem selecionada para Base64
         String base64Image = convertImageToBase64(selectedImageUri);
 
         // Criação do JSON para envio ao backend
@@ -132,7 +160,10 @@ public class ProntuarioFragment extends Fragment {
             exc.printStackTrace();
         }
 
+        // URL de envio
         String url = String.format("http://10.0.2.2:4060/users/%s/patients/newPatient", userId);
+
+        // Criação e envio da requisição HTTP
         JsonObjectRequest enviarPost = new JsonObjectRequest(
                 Request.Method.POST,
                 url,
@@ -151,36 +182,11 @@ public class ProntuarioFragment extends Fragment {
                 }
         );
 
+        // Envia a requisição para a fila de requisições
         RequestQueue queue = Volley.newRequestQueue(getContext());
         queue.add(enviarPost);
     }
 
-    public void deletePatient(String patientId) {
-        if (patientId == null) {
-            Toast.makeText(getContext(), "ID do paciente não encontrado", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        String url = String.format("http://10.0.2.2:4060/patients/%s/deletePatient", patientId);
 
-        JsonObjectRequest deleteRequest = new JsonObjectRequest(
-                Request.Method.DELETE,
-                url,
-                null,
-                response -> {
-                    if (response.has("message")) {
-                        Toast.makeText(getContext(), "Paciente deletado com sucesso!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getContext(), "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
-                    }
-                },
-                error -> {
-                    error.printStackTrace();
-                    Toast.makeText(getContext(), "Erro ao deletar", Toast.LENGTH_SHORT).show();
-                }
-        );
-
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(deleteRequest);
-    }
 }
