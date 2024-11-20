@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(item.getItemId() == R.id.nav_pront) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProntuarioFragment()).commit();
                 }
 
                 if(item.getItemId() == R.id.nav_agenda) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AnotacoesFragment()).commit();
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);

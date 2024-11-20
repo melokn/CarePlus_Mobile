@@ -172,6 +172,11 @@ public class ProntuarioFragment extends Fragment {
                     if (response.has("patientId")) {
                         Toast.makeText(getContext(), "Paciente criado com sucesso!", Toast.LENGTH_SHORT).show();
                         getActivity().getSupportFragmentManager().popBackStack();
+                        Fragment HomeFragment = new HomeFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, HomeFragment)
+                                .addToBackStack(null)
+                                .commit();
                     } else {
                         Toast.makeText(getContext(), "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
                     }

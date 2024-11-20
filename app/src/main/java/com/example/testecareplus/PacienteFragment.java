@@ -31,6 +31,8 @@ public class PacienteFragment extends Fragment {
 
     private EditText nomeText, idadeText, alturaText, tipoSanguineoText, alergiaText, obsText;
     private ImageButton ibUploadIcon, ibTrash, ibEdit;
+    private String nome, tipoSanguineo, alergia, obs;
+    private int idade, altura;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class PacienteFragment extends Fragment {
         ibTrash = view.findViewById(R.id.btTrash);
         ibEdit = view.findViewById(R.id.btEdit);
 
+
+
         // Obter patientId do SharedPreferences
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", getContext().MODE_PRIVATE);
         String patientId = prefs.getString("patientId", null);
@@ -71,7 +75,7 @@ public class PacienteFragment extends Fragment {
         ibEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                editPatient(patientId);
             }
         });
     }
@@ -125,21 +129,33 @@ public class PacienteFragment extends Fragment {
             return;
         }
 
-        String url = String.format("http://10.0.2.2:4060/patients/%s/updatePatient", patientId);
+        String url = "http://10.0.2.2:4060/patients/delete";
 
+        JSONObject dadosBody = new JSONObject();
+        try {
+            dadosBody.put("patientId", patientId);
+        } catch (JSONException exc) {
+            exc.printStackTrace();
+        }
         JsonObjectRequest deleteRequest = new JsonObjectRequest(
-                Request.Method.DELETE,
+                Request.Method.POST,
                 url,
-                null,
+                dadosBody,
                 response -> {
-                    if (response.has("message")) {
+                    if (response.has("patientId")) {
                         Toast.makeText(getContext(), "Paciente deletado com sucesso!", Toast.LENGTH_SHORT).show();
+                        Fragment HomeFragment = new HomeFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, HomeFragment)
+                                .addToBackStack(null)
+                                .commit();
                     } else {
                         Toast.makeText(getContext(), "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
                     }
                 },
                 error -> {
                     error.printStackTrace();
+
                     Toast.makeText(getContext(), "Erro ao deletar", Toast.LENGTH_SHORT).show();
                 }
         );
@@ -153,17 +169,23 @@ public class PacienteFragment extends Fragment {
             return;
         }
 
-        String url = String.format("http://10.0.2.2:4060/patients/%s/deletePatient", patientId);
+        String url = "http://10.0.2.2:4060/patients/update";
+        nome = nomeText.getText().toString().trim();
+        idade = Integer.parseInt(idadeText.getText().toString().trim());
+        altura = Integer.parseInt(alturaText.getText().toString().trim());
+        tipoSanguineo = tipoSanguineoText.getText().toString().trim();
+        alergia = alergiaText.getText().toString().trim();
+        obs = obsText.getText().toString().trim();
 
         JSONObject dadosBody = new JSONObject();
         try {
-            dadosBody.put("name", nomeText);
-            dadosBody.put("age", idadeText);
-            dadosBody.put("icon", ibUploadIcon);
-            dadosBody.put("observations", obsText);
-            dadosBody.put("height", alturaText);
-            dadosBody.put("bloodType", tipoSanguineoText);
-            dadosBody.put("allergies", alergiaText);
+            dadosBody.put("patientId", patientId);
+            dadosBody.put("name", nome);
+            dadosBody.put("age", idade);
+            dadosBody.put("observations", obs);
+            dadosBody.put("height", altura);
+            dadosBody.put("bloodType", tipoSanguineo);
+            dadosBody.put("allergies", alergia);
         } catch (JSONException exc) {
             exc.printStackTrace();
         }
@@ -172,20 +194,26 @@ public class PacienteFragment extends Fragment {
                 url,
                 dadosBody,
                 response -> {
-                    if (response.has("patientId")) {
+                    if (response.has("patient")) {
                         Toast.makeText(getContext(), "Paciente atualizado com sucesso!", Toast.LENGTH_SHORT).show();
                         getActivity().getSupportFragmentManager().popBackStack();
+                        Fragment HomeFragment = new HomeFragment();
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, HomeFragment)
+                                .addToBackStack(null)
+                                .commit();
                     } else {
                         Toast.makeText(getContext(), "Erro: resposta inválida", Toast.LENGTH_SHORT).show();
                     }
                 },
                 error -> {
                     error.printStackTrace();
+                    System.out.println(dadosBody);
                     Toast.makeText(getContext(), "Erro ao enviar", Toast.LENGTH_SHORT).show();
                 }
         );
 
-        // Envia a requisição para a fila de requisições
+
         RequestQueue queue = Volley.newRequestQueue(getContext());
         queue.add(enviarPut);
     }

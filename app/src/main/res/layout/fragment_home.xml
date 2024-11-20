@@ -8,6 +8,14 @@
     tools:context=".HomeFragment">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="-600dp"
+        android:rotation="90"
+        android:src="@drawable/plmds" />
+
+    <ImageView
         android:id="@+id/imageView9"
         android:layout_width="76dp"
         android:layout_height="92dp"
@@ -23,57 +31,12 @@
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="193dp"
-        android:layout_height="211dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="394dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="146dp"
-        android:layout_marginEnd="247dp"
-        android:layout_marginBottom="537dp"
-        android:text="CheckBox"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="277dp"
-        android:layout_marginEnd="247dp"
-        android:layout_marginBottom="406dp"
-        android:text="CheckBox"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="211dp"
-        android:layout_marginEnd="247dp"
-        android:layout_marginBottom="472dp"
-        android:text="CheckBox"
+        android:layout_width="349dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="397dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,8 +75,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:layout_width="356dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="175dp"
+        android:text="Você também pode compartilhar suas experiências aqui!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/comentFam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -130,7 +106,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btMoreDicas"
+        android:id="@+id/btMoreComentFam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="151dp"
@@ -151,15 +127,17 @@
         android:id="@+id/btMorePacientes"
         android:layout_width="81dp"
         android:layout_height="51dp"
-        android:layout_marginStart="319dp"
+        android:layout_marginStart="-25dp"
         android:layout_marginTop="407dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="273dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/btmore"
         tools:ignore="MissingConstraints" />
 
