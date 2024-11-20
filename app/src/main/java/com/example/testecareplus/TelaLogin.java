@@ -99,7 +99,7 @@ public class TelaLogin extends AppCompatActivity {
                                                 @Override
                                                 public void onErrorResponse(VolleyError error) {
                                                         error.printStackTrace();
-                                                        Toast.makeText(TelaLogin.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(TelaLogin.this, "Email ou senha incorreta", Toast.LENGTH_SHORT).show();
                                                 }
                                         }
                                 );
