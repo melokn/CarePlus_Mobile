@@ -26,7 +26,7 @@ public class TelaLogin extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_tela_login);
-                String urlLogin = "http://10.0.2.2:4060/users/login";
+                String urlLogin = "http://192.168.15.10:4060/users/login";
 
                 //Iniciando os componentes da tela
 

@@ -127,7 +127,7 @@ public class HomeFragment extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", getContext().MODE_PRIVATE);
         String userId = prefs.getString("userId", null);
 
-        String url = String.format("http://10.0.2.2:4060/users/%s/patients", userId);
+        String url = String.format("http://192.168.15.10:4060/users/%s/patients", userId);
 
         JsonObjectRequest enviarGet = new JsonObjectRequest(
                 Request.Method.GET,
@@ -185,7 +185,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void createComment(String userId, String username, String comment){
-        String url = "http://10.0.2.2:4060/hint/addHint";
+        String url = "http://192.168.15.10:4060/hint/addHint";
 
         JSONObject hintData = new JSONObject();
         try {

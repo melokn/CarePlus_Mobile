@@ -161,7 +161,7 @@ public class ProntuarioFragment extends Fragment {
         }
 
         // URL de envio
-        String url = String.format("http://10.0.2.2:4060/users/%s/patients/newPatient", userId);
+        String url = String.format("http://192.168.15.10:4060/users/%s/patients/newPatient", userId);
 
         // Criação e envio da requisição HTTP
         JsonObjectRequest enviarPost = new JsonObjectRequest(
