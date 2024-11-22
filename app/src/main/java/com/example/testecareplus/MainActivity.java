@@ -8,7 +8,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(item.getItemId() == R.id.nav_artigos) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ArtigosFragment()).commit();
                 }
 
                 if(item.getItemId() == R.id.nav_pront) {

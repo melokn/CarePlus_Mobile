@@ -77,10 +77,19 @@ public class TelaLogin extends AppCompatActivity {
 
                                                                 if (response.has("userId")) {
                                                                         String userId = response.getString("userId");
+                                                                        String username = response.getString("username");
+                                                                        String accessToken = response.getString("accessToken");
+                                                                        String idToken = response.getString("idToken");
+                                                                        String refreshToken = response.getString("refreshToken");
+
 
                                                                         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                                                                         SharedPreferences.Editor editor = prefs.edit();
+                                                                        editor.putString("accessToken", accessToken);
                                                                         editor.putString("userId", userId);
+                                                                        editor.putString("idToken", idToken);
+                                                                        editor.putString("refreshToken", refreshToken);
+                                                                        editor.putString("usuario", username);
                                                                         editor.apply();
 
                                                                         Toast.makeText(TelaLogin.this, "Logado com sucesso", Toast.LENGTH_SHORT).show();

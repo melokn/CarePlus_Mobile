@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -51,7 +50,7 @@ public class PacienteFragment extends Fragment {
         alergiaText = view.findViewById(R.id.alergiaText);
         obsText = view.findViewById(R.id.obsText);
         ibUploadIcon = view.findViewById(R.id.ibUploadIcon);
-        ibTrash = view.findViewById(R.id.btTrash);
+        ibTrash = view.findViewById(R.id.btTrashHint);
         ibEdit = view.findViewById(R.id.btEdit);
 
 

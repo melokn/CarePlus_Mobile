@@ -161,7 +161,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btTrash"
+        android:id="@+id/btTrashHint"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="77dp"

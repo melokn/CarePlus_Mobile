@@ -1,10 +1,16 @@
 package com.example.testecareplus;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -19,6 +25,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -37,6 +44,7 @@ public class HomeFragment extends Fragment {
 
         // Configuração do RecyclerView
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        CalendarView calendarView = view.findViewById(R.id.calendarView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -70,12 +78,51 @@ public class HomeFragment extends Fragment {
                     .commit();
         });
 
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                // Quando o usuário selecionar uma data, abre o Google Agenda
+                openGoogleCalendar();
+            }
+        });
+        ImageButton moreComment = view.findViewById((R.id.btMoreComment));
+        moreComment.setOnClickListener(v -> {
+            EditText etComment = view.findViewById(R.id.etComment);
+            String comment = etComment.getText().toString().trim();
+            SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+            String userId = prefs.getString("userId", null);
+            String usuario = prefs.getString("usuario", null);
+            if (userId == null) {
+                Toast.makeText(getContext(), "Usuário não encontrado!", Toast.LENGTH_SHORT).show();
+            } else {
+                createComment(userId, usuario, comment);
+            }
+
+        });
+
         // Busca os dados dos pacientes
         fetchPatientDataFromDatabase();
 
         return view;
     }
 
+    private void openGoogleCalendar() {
+        // Cria a Intent para abrir o Google Agenda
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+
+        // Tenta abrir o Google Calendar com uma URI de visualização de eventos
+        intent.setData(Uri.parse("content://com.android.calendar/time/" + System.currentTimeMillis()));
+
+        // Fallback: Tentativa de abrir diretamente o Google Calendar se o sistema não conseguir abrir a URI
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            // Caso o Google Agenda não esteja instalado, abrir a versão web no navegador
+            Uri uri = Uri.parse("https://www.google.com/calendar");
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(webIntent);
+        }
+    }
     private void fetchPatientDataFromDatabase() {
         SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", getContext().MODE_PRIVATE);
         String userId = prefs.getString("userId", null);
@@ -135,5 +182,32 @@ public class HomeFragment extends Fragment {
         this.patientIds.addAll(patientIds);
 
         imageAdapter.notifyDataSetChanged();
+    }
+
+    private void createComment(String userId, String username, String comment){
+        String url = "http://10.0.2.2:4060/hint/addHint";
+
+        JSONObject hintData = new JSONObject();
+        try {
+            hintData.put("author", username);
+            hintData.put("content", comment);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(getContext(), "Erro ao criar a dica!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, hintData,
+                response -> {
+
+                    Toast.makeText(getContext(), "Dica adicionada com sucesso!", Toast.LENGTH_SHORT).show();
+                },
+                error -> {
+
+                    Log.e("VolleyError", "Erro ao salvar dica: " + error.getMessage());
+                    Toast.makeText(getContext(), "Erro ao salvar a dica!", Toast.LENGTH_SHORT).show();
+                });
+
+        Volley.newRequestQueue(getContext()).add(request);
+
     }
 }

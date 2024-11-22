@@ -10,141 +10,12 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
-        android:id="@+id/imageView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="212dp"
-        android:layout_marginBottom="65dp"
-        android:rotationY="180"
-        android:src="@drawable/yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/alturaText"
-        android:layout_width="143dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="182dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="510dp"
-        android:ems="10"
-        android:hint="Altura"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/idadeText"
-        android:layout_width="143dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="560dp"
-        android:ems="10"
-        android:hint="Idade"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/tipoSanguineoText"
-        android:layout_width="144dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="457dp"
-        android:ems="10"
-        android:hint="Tipo Sanguíneo"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/alergiaText"
-        android:layout_width="144dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="410dp"
-        android:ems="10"
-        android:hint="Alergias"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/textNome"
-        android:layout_width="116dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="234dp"
-        android:layout_marginBottom="480dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Nome"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/ibUploadIcon"
-        android:layout_width="130dp"
-        android:layout_height="90dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156"
-        app:srcCompat="@drawable/btmore" />
-
-    <EditText
-        android:id="@+id/obsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="576dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="110dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Observações"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-700dp"
+        android:rotation="90"
+        android:src="@drawable/plmds" />
 
     <ImageView
         android:id="@+id/imageView31"
@@ -160,34 +31,155 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btSave"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="77dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="631dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@drawable/save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView32"
+    <ImageButton
+        android:id="@+id/ibUploadIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="394dp"
-        android:src="@drawable/red"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="559dp"
+        android:backgroundTint="#00FFFFFF"
+        android:src="@drawable/btmore"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/textNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="568dp"
+        android:hint="Nome"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="390dp"
+        android:layout_height="393dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="159dp"
+        android:src="@drawable/pront"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idadeText"
+        android:layout_width="165dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="278dp"
+        android:layout_marginEnd="206dp"
+        android:layout_marginBottom="414dp"
+        android:ems="10"
+        android:hint="Idade"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/alturaText"
+        android:layout_width="185dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="326dp"
+        android:layout_marginEnd="186dp"
+        android:layout_marginBottom="364dp"
+        android:ems="10"
+        android:hint="Altura"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tipoSanguineoText"
+        android:layout_width="224dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="375dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="316dp"
+        android:ems="10"
+        android:hint="Tipo sanguíneo"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/alergiaText"
+        android:layout_width="271dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="427dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="266dp"
+        android:ems="10"
+        android:hint="Comorbidade e alergias"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/obsText"
+        android:layout_width="271dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="83dp"
+        android:ems="10"
+        android:hint="Observações: "
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:layout_width="1012dp"
+        android:layout_height="829dp"
+        android:layout_marginTop="304dp"
+        android:rotation="-90"
+        android:src="@drawable/plmds"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-321dp" />
+
+    <Button
+        android:id="@+id/btSave"
+        android:layout_width="147dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="469dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="223dp"
+        android:text="Salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
