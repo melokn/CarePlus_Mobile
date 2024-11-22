@@ -11,6 +11,14 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-700dp"
+        android:rotation="90"
+        android:src="@drawable/plmds" />
+
 
     <TextView
         android:layout_width="157dp"
@@ -71,5 +79,14 @@ e dicas práticas     sobre cuidados."
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vovoemulher" />
 
+    <ImageView
+        android:layout_width="1012dp"
+        android:layout_height="829dp"
+        android:layout_marginTop="264dp"
+        android:rotation="-90"
+        android:src="@drawable/plmds"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-253dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

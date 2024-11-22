@@ -10,113 +10,113 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
-        android:id="@+id/imageView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="212dp"
-        android:layout_marginBottom="65dp"
-        android:rotationY="180"
-        android:src="@drawable/yellow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-700dp"
+        android:rotation="90"
+        android:src="@drawable/plmds" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="390dp"
+        android:layout_height="393dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="159dp"
+        android:src="@drawable/pront"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/alturaText"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="182dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="510dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginBottom="361dp"
         android:ems="10"
         android:hint="Altura"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/idadeText"
         android:layout_width="143dp"
         android:layout_height="39dp"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="560dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="274dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginBottom="418dp"
         android:ems="10"
         android:hint="Idade"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/tipoSanguineoText"
         android:layout_width="144dp"
         android:layout_height="40dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="457dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="229dp"
+        android:layout_marginBottom="313dp"
         android:ems="10"
         android:hint="Tipo Sanguíneo"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/alergiaText"
         android:layout_width="144dp"
         android:layout_height="40dp"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="410dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="427dp"
+        android:layout_marginEnd="229dp"
+        android:layout_marginBottom="264dp"
         android:ems="10"
         android:hint="Alergias"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/textNome"
         android:layout_width="116dp"
         android:layout_height="38dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="234dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="569dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Nome"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/ibUploadIcon"
-        android:layout_width="130dp"
-        android:layout_height="90dp"
+        android:layout_width="77dp"
+        android:layout_height="75dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -193,16 +193,15 @@
         app:layout_constraintVertical_bias="0.0"
         tools:src="@drawable/edit" />
 
+
     <ImageView
-        android:id="@+id/imageView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="394dp"
-        android:src="@drawable/red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="1012dp"
+        android:layout_height="829dp"
+        android:layout_marginTop="304dp"
+        android:rotation="-90"
+        android:src="@drawable/plmds"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-321dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

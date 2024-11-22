@@ -7,8 +7,51 @@
     android:background="#fffef4"
     tools:context=".TelaLogin">
 
+
     <ImageView
-        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="-150dp"
+        android:layout_marginTop="-700dp"
+        android:rotation="90"
+        android:src="@drawable/plmds" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="222dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="536dp"
+        android:fontFamily="@font/adlam_display"
+        android:text="Bem-vindo de volta!"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="183dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="517dp"
+        android:fontFamily="@font/afacad_italic"
+        android:text="Entre e use sua conta!"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView10"
         android:layout_width="93dp"
         android:layout_height="156dp"
         android:layout_marginBottom="591dp"
@@ -17,6 +60,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/iconlogo" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="699dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginBottom="13dp"
+        android:text="Care.Plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <Button
         android:id="@+id/btLogin"
@@ -107,4 +166,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="1012dp"
+        android:layout_height="829dp"
+        android:layout_marginTop="252dp"
+        android:rotation="-90"
+        android:src="@drawable/plmds"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-288dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
