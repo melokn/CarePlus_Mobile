@@ -29,7 +29,7 @@ public class TelaEscolha extends AppCompatActivity {
         String usuario = prefs.getString("usuario", null);
 
 
-        String url = "http://192.168.15.10:4060/users";
+        String url = "https://careplus-696u.onrender.com/users";
 
 
         JSONObject dadosBody = new JSONObject();

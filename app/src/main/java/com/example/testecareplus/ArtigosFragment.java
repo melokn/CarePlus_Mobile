@@ -42,7 +42,7 @@ public class ArtigosFragment extends Fragment {
     }
 
     private void fetchHints() {
-        String url = "http://192.168.15.10:4060/hints";
+        String url = "https://careplus-696u.onrender.com/hints";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
@@ -100,7 +100,7 @@ public class ArtigosFragment extends Fragment {
         layout.addView(view);
     }
     private void deleteHintFromDatabase(String hintId, Runnable onSuccess) {
-        String url = "http://192.168.15.10:4060/hint/delete";
+        String url = "https://careplus-696u.onrender.com/hint/delete";
 
         // Criar o corpo da requisição
         JSONObject requestBody = new JSONObject();

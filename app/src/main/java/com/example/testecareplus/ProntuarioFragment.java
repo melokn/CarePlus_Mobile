@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -46,7 +47,7 @@ public class ProntuarioFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_prontuario, container, false);
-        ImageButton btSave = view.findViewById(R.id.btSave);
+        Button btSave = view.findViewById(R.id.btSave);
 
         uploadIcon = view.findViewById(R.id.ibUploadIcon);
 
@@ -161,7 +162,7 @@ public class ProntuarioFragment extends Fragment {
         }
 
         // URL de envio
-        String url = String.format("http://192.168.15.10:4060/users/%s/patients/newPatient", userId);
+        String url = String.format("https://careplus-696u.onrender.com/users/%s/patients/newPatient", userId);
 
         // Criação e envio da requisição HTTP
         JsonObjectRequest enviarPost = new JsonObjectRequest(

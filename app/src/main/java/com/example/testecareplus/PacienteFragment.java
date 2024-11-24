@@ -80,7 +80,7 @@ public class PacienteFragment extends Fragment {
     }
 
     private void fetchPatientData(String patientId) {
-        String url = "http://192.168.15.10:4060/patients/" + patientId;
+        String url = "https://careplus-696u.onrender.com/patients/" + patientId;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET, url, null,
@@ -128,7 +128,7 @@ public class PacienteFragment extends Fragment {
             return;
         }
 
-        String url = "http://192.168.15.10:4060/patients/delete";
+        String url = "https://careplus-696u.onrender.com/patients/delete";
 
         JSONObject dadosBody = new JSONObject();
         try {
@@ -168,7 +168,7 @@ public class PacienteFragment extends Fragment {
             return;
         }
 
-        String url = "http://192.168.15.10:4060/patients/update";
+        String url = "https://careplus-696u.onrender.com/patients/update";
         nome = nomeText.getText().toString().trim();
         idade = Integer.parseInt(idadeText.getText().toString().trim());
         altura = Integer.parseInt(alturaText.getText().toString().trim());

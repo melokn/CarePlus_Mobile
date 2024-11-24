@@ -122,7 +122,7 @@ public class AnotacoesFragment extends Fragment {
 
 
     private void saveNoteToDatabase(String userId, JSONObject noteData, String title, String description, String priority, String patient) {
-        String url = String.format("http://192.168.15.10:4060/users/%s/notes/addNote", userId);
+        String url = String.format("https://careplus-696u.onrender.com/users/%s/notes/addNote", userId);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, noteData,
                 response -> {
@@ -140,7 +140,7 @@ public class AnotacoesFragment extends Fragment {
     }
 
     private void fetchNotes(String userId, TextView titleTextView) {
-        String url = String.format("http://192.168.15.10:4060/users/%s/notes", userId);
+        String url = String.format("https://careplus-696u.onrender.com/users/%s/notes", userId);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
@@ -233,7 +233,7 @@ public class AnotacoesFragment extends Fragment {
 
 
     private void deleteNoteFromDatabase(String noteTitle, String userId, Runnable onSuccess) {
-        String url = String.format("http://192.168.15.10:4060/users/%s/notes/delete", userId);
+        String url = String.format("https://careplus-696u.onrender.com/users/%s/notes/delete", userId);
 
         // Criar o corpo da requisição
         JSONObject requestBody = new JSONObject();
@@ -261,7 +261,7 @@ public class AnotacoesFragment extends Fragment {
     }
 
     private void fetchPatients(String userId, Spinner spinner) {
-        String url = String.format("http://192.168.15.10:4060/users/%s/patients", userId);
+        String url = String.format("https://careplus-696u.onrender.com/users/%s/patients", userId);
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
