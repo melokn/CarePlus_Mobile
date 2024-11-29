@@ -114,6 +114,8 @@ public class AnotacoesFragment extends Fragment {
 
 
                     saveNoteToDatabase(userId, noteData, taskTitle, taskDescription, taskPriority, selectedPatientName);
+                    title.setText("");
+                    name.setText("");
                 })
                 .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
 
@@ -129,6 +131,7 @@ public class AnotacoesFragment extends Fragment {
 
                     Toast.makeText(getContext(), "Tarefa adicionada com sucesso!", Toast.LENGTH_SHORT).show();
                     addCard(title, description, priority, patient, userId);
+
                 },
                 error -> {
 

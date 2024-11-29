@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -35,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
                 if(item.getItemId() == R.id.nav_home) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                 }
-
+                if(item.getItemId() == R.id.nav_logoout){
+                    Intent intent = new Intent(MainActivity.this, TelaLogin.class);
+                    startActivity(intent);
+                    finish();
+                }
                 if(item.getItemId() == R.id.nav_artigos) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ArtigosFragment()).commit();
                 }

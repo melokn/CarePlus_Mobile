@@ -83,6 +83,8 @@ public class TelaLogin extends AppCompatActivity {
                                                                         String refreshToken = response.getString("refreshToken");
 
 
+                                                                        campoEmail.setText("");
+                                                                        campoSenha.setText("");
                                                                         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
                                                                         SharedPreferences.Editor editor = prefs.edit();
                                                                         editor.putString("accessToken", accessToken);

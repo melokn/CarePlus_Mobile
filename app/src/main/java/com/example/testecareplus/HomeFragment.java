@@ -89,6 +89,10 @@ public class HomeFragment extends Fragment {
         moreComment.setOnClickListener(v -> {
             EditText etComment = view.findViewById(R.id.etComment);
             String comment = etComment.getText().toString().trim();
+            if (comment.isEmpty()) {
+                Toast.makeText(getContext(), "Adicione texto antes de enviar!", Toast.LENGTH_SHORT).show();
+                return;
+            }
             SharedPreferences prefs = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
             String userId = prefs.getString("userId", null);
             String usuario = prefs.getString("usuario", null);
@@ -96,6 +100,7 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), "Usuário não encontrado!", Toast.LENGTH_SHORT).show();
             } else {
                 createComment(userId, usuario, comment);
+                etComment.setText("");
             }
 
         });

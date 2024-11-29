@@ -20,34 +20,20 @@
         android:layout_width="192dp"
         android:layout_height="32dp"
         android:layout_marginStart="107dp"
-        android:layout_marginTop="158dp"
+        android:layout_marginTop="173dp"
         android:layout_marginEnd="82dp"
         android:layout_marginBottom="536dp"
         android:fontFamily="@font/adlam_display"
         android:text="Crie uma conta!"
         android:textSize="22sp"
+        android:textColor="#000000"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="117dp"
-        android:layout_height="148dp"
-        android:layout_marginStart="147dp"
-        android:layout_marginEnd="147dp"
-        android:layout_marginBottom="583dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/iconlogo" />
-
 
     <TextView
         android:id="@+id/textView14"
@@ -58,6 +44,9 @@
         android:layout_marginEnd="175dp"
         android:layout_marginBottom="16dp"
         android:text="Care.Plus"
+        android:textColor="#000000"
+        android:fontFamily="@font/adlam_display"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,48 +56,54 @@
         android:id="@+id/campoSenhaCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="372dp"
+        android:layout_marginStart="100dp"
         android:layout_marginEnd="94dp"
         android:layout_marginBottom="314dp"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/campoEmailCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="234dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="452dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="450dp"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.807"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="117dp"
-        android:layout_height="148dp"
+        android:layout_width="93dp"
+        android:layout_height="156dp"
         android:layout_marginStart="147dp"
         android:layout_marginEnd="147dp"
-        android:layout_marginBottom="583dp"
+        android:layout_marginBottom="625dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -118,44 +113,50 @@
         android:id="@+id/campoUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="303dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="93dp"
         android:layout_marginBottom="383dp"
         android:ems="10"
-        android:hint="Usuário"
-        android:inputType="text"
+        android:fontFamily="@font/montserrat"
+        android:hint="Usuario"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.864"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/btCadastrarCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
-        android:layout_marginTop="501dp"
-        android:layout_marginEnd="139dp"
-        android:layout_marginBottom="182dp"
-        android:backgroundTint="#b3cdc5"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="10dp"
         android:text="Cadastrar-se "
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
 
     <ImageView
         android:layout_width="1012dp"
         android:layout_height="829dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginStart="-250dp"
+        android:layout_marginTop="296dp"
         android:rotation="-90"
         android:src="@drawable/plmds"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-253dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -167,8 +168,58 @@
         android:layout_marginEnd="175dp"
         android:layout_marginBottom="16dp"
         android:text="Care.Plus"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/requisito8Caracteres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="10dp"
+        android:text="8 caracteres"
+        android:textColor="#FF0000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/campoSenhaCadastro" />
+
+    <TextView
+        android:id="@+id/requisitoMaiuscula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="10dp"
+        android:text="Letra maiúscula"
+        android:textColor="#FF0000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/requisito8Caracteres" />
+
+    <TextView
+        android:id="@+id/requisitoNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="10dp"
+        android:text="Um número"
+        android:textColor="#FF0000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/requisitoMaiuscula" />
+
+    <TextView
+        android:id="@+id/requisitoSimbolo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="10dp"
+        android:text="Um símbolo"
+        android:textColor="#FF0000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/requisitoNumero" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

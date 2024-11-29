@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -33,6 +35,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,15 +87,41 @@ public class ProntuarioFragment extends Fragment {
 
     private String convertImageToBase64(Uri imageUri) {
         try {
-            InputStream inputStream = getContext().getContentResolver().openInputStream(imageUri);
-            byte[] imageBytes = new byte[inputStream.available()];
-            inputStream.read(imageBytes);
+            // Redimensiona e comprime a imagem
+            Bitmap resizedBitmap = resizeImage(imageUri, 1024, 1024); // Redimensiona para 1024x1024 no máximo
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream); // Compressão JPEG com qualidade 80
+            byte[] imageBytes = byteArrayOutputStream.toByteArray();
+
+            // Converte os bytes da imagem para Base64
             return Base64.encodeToString(imageBytes, Base64.DEFAULT);
         } catch (IOException e) {
             e.printStackTrace();
+            Toast.makeText(getContext(), "Erro ao processar a imagem", Toast.LENGTH_SHORT).show();
             return null;
         }
     }
+
+
+    private Bitmap resizeImage(Uri imageUri, int maxWidth, int maxHeight) throws IOException {
+        InputStream inputStream = getContext().getContentResolver().openInputStream(imageUri);
+        Bitmap originalBitmap = BitmapFactory.decodeStream(inputStream);
+
+        int width = originalBitmap.getWidth();
+        int height = originalBitmap.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxWidth;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxHeight;
+            width = (int) (height * bitmapRatio);
+        }
+
+        return Bitmap.createScaledBitmap(originalBitmap, width, height, true);
+    }
+
 
     private void savePatient() {
         // Obtém outros dados do paciente dos campos de entrada
@@ -131,7 +160,7 @@ public class ProntuarioFragment extends Fragment {
         try {
             altura = Integer.parseInt(alturaString);
         } catch (NumberFormatException e) {
-            Toast.makeText(getContext(), "Altura deve ser um número válido!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Altura deve ser um número válido, em CENTÍMETROS!", Toast.LENGTH_SHORT).show();
             return; // Se a altura não for válida, interrompe a execução
         }
 

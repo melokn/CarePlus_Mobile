@@ -13,11 +13,6 @@
         
         />
 
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/nav_settings"
-            android:title="Configurações" />
-
 
         <item
           android:id="@+id/nav_pront"
@@ -28,16 +23,6 @@
             android:id="@+id/nav_artigos"
             android:icon="@drawable/nav_artigos"
             android:title="Artigos e Dicas" />
-
-        <item
-            android:id="@+id/nav_ajuda"
-            android:icon="@drawable/nav_ajuda"
-            android:title="Ajuda" />
-
-        <item
-            android:id="@+id/nav_agenda"
-            android:icon="@drawable/nav_agenda"
-            android:title="Agenda" />
 
         <item
             android:id="@+id/nav_agenda"

@@ -30,8 +30,8 @@ public class PacienteFragment extends Fragment {
 
     private EditText nomeText, idadeText, alturaText, tipoSanguineoText, alergiaText, obsText;
     private ImageButton ibUploadIcon, ibTrash, ibEdit;
-    private String nome, tipoSanguineo, alergia, obs;
-    private int idade, altura;
+    private String nome, tipoSanguineo, alergia, obs, idadeString, alturaString;
+    private int idade, altura = 0;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -170,12 +170,29 @@ public class PacienteFragment extends Fragment {
 
         String url = "https://careplus-696u.onrender.com/patients/update";
         nome = nomeText.getText().toString().trim();
-        idade = Integer.parseInt(idadeText.getText().toString().trim());
-        altura = Integer.parseInt(alturaText.getText().toString().trim());
+        idadeString = idadeText.getText().toString().trim();
+        alturaString = alturaText.getText().toString().trim();
         tipoSanguineo = tipoSanguineoText.getText().toString().trim();
         alergia = alergiaText.getText().toString().trim();
         obs = obsText.getText().toString().trim();
 
+        if (nome.isEmpty() || idadeString.isEmpty() || alturaString.isEmpty() || tipoSanguineo.isEmpty() || alergia.isEmpty() || obs.isEmpty()) {
+            Toast.makeText(getContext(), "Todos os campos devem ser preenchidos!", Toast.LENGTH_SHORT).show();
+            return; // Interrompe a execução se algum campo estiver vazio
+        }
+        try {
+            idade = Integer.parseInt(idadeString);
+        } catch (NumberFormatException e) {
+            Toast.makeText(getContext(), "Idade deve ser um número válido!", Toast.LENGTH_SHORT).show();
+            return; // Se a idade não for válida, interrompe a execução
+        }
+
+        try {
+            altura = Integer.parseInt(alturaString);
+        } catch (NumberFormatException e) {
+            Toast.makeText(getContext(), "Altura deve ser um número válido, em CENTÍMETROS!", Toast.LENGTH_SHORT).show();
+            return; // Se a altura não for válida, interrompe a execução
+        }
         JSONObject dadosBody = new JSONObject();
         try {
             dadosBody.put("patientId", patientId);

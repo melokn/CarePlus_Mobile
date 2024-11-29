@@ -83,6 +83,9 @@
         android:layout_marginTop="685dp"
         android:layout_marginEnd="169dp"
         android:layout_marginBottom="27dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:visibility="visible"
         android:text="care.plus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,10 +102,16 @@
         android:layout_marginBottom="198dp"
         android:fontFamily="@font/montserrat"
         android:text="Familia"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        />
 
     <TextView
         android:id="@+id/textView7"
@@ -114,10 +123,16 @@
         android:layout_marginBottom="198dp"
         android:fontFamily="@font/montserrat"
         android:text="Cuidador"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+         />
 
     <TextView
         android:id="@+id/textView8"
@@ -129,6 +144,9 @@
         android:layout_marginBottom="421dp"
         android:fontFamily="@font/montserrat"
         android:text="O que você é do idoso?"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:visibility="visible"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

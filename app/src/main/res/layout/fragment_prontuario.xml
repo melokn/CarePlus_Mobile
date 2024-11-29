@@ -34,13 +34,14 @@
 
     <ImageButton
         android:id="@+id/ibUploadIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="106dp"
         android:layout_marginEnd="283dp"
         android:layout_marginBottom="559dp"
         android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
         android:src="@drawable/btmore"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +102,7 @@
         android:layout_marginEnd="186dp"
         android:layout_marginBottom="364dp"
         android:ems="10"
-        android:hint="Altura"
+        android:hint="Altura (em cm)"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -160,12 +161,13 @@
     <ImageView
         android:layout_width="1012dp"
         android:layout_height="829dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginStart="-250dp"
+        android:layout_marginTop="370dp"
         android:rotation="-90"
         android:src="@drawable/plmds"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-321dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btSave"
@@ -175,6 +177,7 @@
         android:layout_marginTop="469dp"
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="223dp"
+        android:backgroundTint="@android:color/transparent"
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

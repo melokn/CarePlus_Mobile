@@ -7,7 +7,6 @@
     android:background="#fffef4"
     tools:context=".TelaLogin">
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,35 +19,41 @@
         android:id="@+id/textView10"
         android:layout_width="222dp"
         android:layout_height="37dp"
-        android:layout_marginStart="107dp"
+        android:layout_marginStart="115dp"
         android:layout_marginTop="158dp"
         android:layout_marginEnd="82dp"
         android:layout_marginBottom="536dp"
         android:fontFamily="@font/adlam_display"
         android:text="Bem-vindo de volta!"
+        android:textColor="#000000"
         android:textSize="22sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="183dp"
         android:layout_height="25dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="195dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="230dp"
         android:layout_marginEnd="126dp"
         android:layout_marginBottom="517dp"
         android:fontFamily="@font/afacad_italic"
         android:text="Entre e use sua conta!"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textColor="#000000"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.157"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0"
+    tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -61,22 +66,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/iconlogo" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="178dp"
-        android:layout_marginTop="699dp"
-        android:layout_marginEnd="173dp"
-        android:layout_marginBottom="13dp"
-        android:text="Care.Plus"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
     <Button
         android:id="@+id/btLogin"
         android:layout_width="129dp"
@@ -88,11 +77,13 @@
         android:backgroundTint="#b3cdc5"
         android:fontFamily="@font/montserrat"
         android:text="Login"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView4"
@@ -100,36 +91,23 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="220dp"
         android:text="ou"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btLogin"
-        app:layout_constraintVertical_bias="1.0" />
+        android:textColor="#000000"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/btLogin"
+    app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="526dp"
+        android:layout_marginTop="556dp"
         android:layout_marginBottom="157dp"
         android:backgroundTint="#b3cdc5"
         android:fontFamily="@font/montserrat"
         android:text="Cadastrar-se"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="178dp"
-        android:layout_marginTop="699dp"
-        android:layout_marginEnd="173dp"
-        android:layout_marginBottom="13dp"
-        android:text="Care.Plus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,12 +123,15 @@
         android:fontFamily="@font/montserrat"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/campoSenhaLogin"
@@ -163,6 +144,8 @@
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -173,10 +156,27 @@
         android:id="@+id/imageView11"
         android:layout_width="1012dp"
         android:layout_height="829dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginStart="-250dp"
+        android:layout_marginTop="300dp"
         android:rotation="-90"
         android:src="@drawable/plmds"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-288dp" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="699dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginBottom="13dp"
+        android:text="Care.Plus"
+        android:textColor="#000000"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
